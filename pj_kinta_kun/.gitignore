@@ -1,0 +1,44 @@
+#CocoaPod
+Pods/*
+
+# Mac
+.DS_Store
+
+# Xcode
+
+# R.swift
+*.generated.swift
+
+# Build generated
+build/
+DerivedData/
+output/
+
+# Various settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata/
+
+# Other
+*.moved-aside
+*.xccheckout
+*.xcscmblueprint
+
+# Obj-C/Swift specific
+*.hmap
+*.ipa
+
+# carthage?
+Carthage/Build
+
+# fastlane
+fastlane/*.md
+fastlane/*.xml
+
+vendor/
