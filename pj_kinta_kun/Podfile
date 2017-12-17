@@ -5,6 +5,7 @@ target 'pj_kinta_kun' do
   use_frameworks!
 
   pod 'SnapKit'
+  pod 'R.swift'
 
   target 'pj_kinta_kunTests' do
     inherit! :search_paths
