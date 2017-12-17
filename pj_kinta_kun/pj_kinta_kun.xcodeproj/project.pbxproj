@@ -9,14 +9,17 @@
 /* Begin PBXBuildFile section */
 		3633722883F9E3741852E256 /* Pods_pj_kinta_kunTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74BD22019D3F260E45235419 /* Pods_pj_kinta_kunTests.framework */; };
 		95AF530F1FE6522B000422A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF530E1FE6522B000422A1 /* AppDelegate.swift */; };
-		95AF53111FE6522B000422A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF53101FE6522B000422A1 /* ViewController.swift */; };
-		95AF53141FE6522B000422A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AF53121FE6522B000422A1 /* Main.storyboard */; };
 		95AF53161FE6522B000422A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95AF53151FE6522B000422A1 /* Assets.xcassets */; };
 		95AF53191FE6522B000422A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AF53171FE6522B000422A1 /* LaunchScreen.storyboard */; };
 		95AF53241FE6522B000422A1 /* pj_kinta_kunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF53231FE6522B000422A1 /* pj_kinta_kunTests.swift */; };
 		95AF533C1FE65B09000422A1 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95AF533B1FE65B09000422A1 /* Splash.storyboard */; };
 		95AF533E1FE65B14000422A1 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF533D1FE65B14000422A1 /* SplashViewController.swift */; };
 		95AF53411FE65E43000422A1 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95AF53401FE65E43000422A1 /* R.generated.swift */; };
+		95F0BF221FE6A8AB00303909 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF211FE6A8AB00303909 /* MainViewController.swift */; };
+		95F0BF241FE6A8B200303909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F0BF231FE6A8B200303909 /* Main.storyboard */; };
+		95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */; };
+		95F0BF291FE6B2BD00303909 /* ActiveFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF281FE6B2BD00303909 /* ActiveFloatingButton.swift */; };
+		95F0BF2B1FE6B50700303909 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */; };
 		EBFE377B4E28AB2146DE55BC /* Pods_pj_kinta_kun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79052732F905096524C96B25 /* Pods_pj_kinta_kun.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,8 +41,6 @@
 		93B8ED8CB3914FE500DFD720 /* Pods-pj_kinta_kun.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pj_kinta_kun.debug.xcconfig"; path = "Pods/Target Support Files/Pods-pj_kinta_kun/Pods-pj_kinta_kun.debug.xcconfig"; sourceTree = "<group>"; };
 		95AF530B1FE6522B000422A1 /* pj_kinta_kun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pj_kinta_kun.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		95AF530E1FE6522B000422A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		95AF53101FE6522B000422A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		95AF53131FE6522B000422A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		95AF53151FE6522B000422A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		95AF53181FE6522B000422A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95AF531A1FE6522B000422A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +50,11 @@
 		95AF533B1FE65B09000422A1 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		95AF533D1FE65B14000422A1 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		95AF53401FE65E43000422A1 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		95F0BF211FE6A8AB00303909 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		95F0BF231FE6A8B200303909 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		95F0BF281FE6B2BD00303909 /* ActiveFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveFloatingButton.swift; sourceTree = "<group>"; };
+		95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		A3E5699A1F1F502942D165B2 /* Pods-pj_kinta_kun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pj_kinta_kun.release.xcconfig"; path = "Pods/Target Support Files/Pods-pj_kinta_kun/Pods-pj_kinta_kun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,9 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				95AF532E1FE65A11000422A1 /* View */,
+				95F0BF251FE6AD7A00303909 /* Extensions */,
 				95AF530E1FE6522B000422A1 /* AppDelegate.swift */,
-				95AF53101FE6522B000422A1 /* ViewController.swift */,
-				95AF53121FE6522B000422A1 /* Main.storyboard */,
 				95AF53151FE6522B000422A1 /* Assets.xcassets */,
 				95AF53171FE6522B000422A1 /* LaunchScreen.storyboard */,
 				95AF531A1FE6522B000422A1 /* Info.plist */,
@@ -178,8 +183,20 @@
 		95AF53341FE65A11000422A1 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				95F0BF231FE6A8B200303909 /* Main.storyboard */,
+				95F0BF211FE6A8AB00303909 /* MainViewController.swift */,
+				95F0BF281FE6B2BD00303909 /* ActiveFloatingButton.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		95F0BF251FE6AD7A00303909 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */,
+				95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		E9A4C8FCA57F39558485FDE1 /* Pods */ = {
@@ -285,8 +302,8 @@
 			files = (
 				95AF53191FE6522B000422A1 /* LaunchScreen.storyboard in Resources */,
 				95AF53161FE6522B000422A1 /* Assets.xcassets in Resources */,
-				95AF53141FE6522B000422A1 /* Main.storyboard in Resources */,
 				95AF533C1FE65B09000422A1 /* Splash.storyboard in Resources */,
+				95F0BF241FE6A8B200303909 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,10 +439,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */,
+				95F0BF2B1FE6B50700303909 /* UIColorExtension.swift in Sources */,
 				95AF533E1FE65B14000422A1 /* SplashViewController.swift in Sources */,
-				95AF53111FE6522B000422A1 /* ViewController.swift in Sources */,
 				95AF530F1FE6522B000422A1 /* AppDelegate.swift in Sources */,
 				95AF53411FE65E43000422A1 /* R.generated.swift in Sources */,
+				95F0BF221FE6A8AB00303909 /* MainViewController.swift in Sources */,
+				95F0BF291FE6B2BD00303909 /* ActiveFloatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,14 +468,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		95AF53121FE6522B000422A1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				95AF53131FE6522B000422A1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		95AF53171FE6522B000422A1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
