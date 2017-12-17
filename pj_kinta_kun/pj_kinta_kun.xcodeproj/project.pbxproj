@@ -98,6 +98,7 @@
 		95AF530D1FE6522B000422A1 /* pj_kinta_kun */ = {
 			isa = PBXGroup;
 			children = (
+				95AF532E1FE65A11000422A1 /* View */,
 				95AF530E1FE6522B000422A1 /* AppDelegate.swift */,
 				95AF53101FE6522B000422A1 /* ViewController.swift */,
 				95AF53121FE6522B000422A1 /* Main.storyboard */,
@@ -115,6 +116,61 @@
 				95AF53251FE6522B000422A1 /* Info.plist */,
 			);
 			path = pj_kinta_kunTests;
+			sourceTree = "<group>";
+		};
+		95AF532E1FE65A11000422A1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				95AF53331FE65A11000422A1 /* Sprash */,
+				95AF53311FE65A11000422A1 /* InitialSetting */,
+				95AF53341FE65A11000422A1 /* Main */,
+				95AF532F1FE65A11000422A1 /* HistoryMonthList */,
+				95AF53321FE65A11000422A1 /* HistoryDayList */,
+				95AF53301FE65A11000422A1 /* Others */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		95AF532F1FE65A11000422A1 /* HistoryMonthList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HistoryMonthList;
+			sourceTree = "<group>";
+		};
+		95AF53301FE65A11000422A1 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
+			sourceTree = "<group>";
+		};
+		95AF53311FE65A11000422A1 /* InitialSetting */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = InitialSetting;
+			sourceTree = "<group>";
+		};
+		95AF53321FE65A11000422A1 /* HistoryDayList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HistoryDayList;
+			sourceTree = "<group>";
+		};
+		95AF53331FE65A11000422A1 /* Sprash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sprash;
+			sourceTree = "<group>";
+		};
+		95AF53341FE65A11000422A1 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		E9A4C8FCA57F39558485FDE1 /* Pods */ = {
