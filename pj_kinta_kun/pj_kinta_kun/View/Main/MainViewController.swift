@@ -9,19 +9,28 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    private let floatingButtonView = ActiveFloatingButtonView()
+    @IBOutlet weak var floatingButtonView: ActiveFloatingButtonView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initLayout()
+        
+        floatingButtonView.historyButton.addTarget(self, action: #selector(toHistoryView), for: .touchUpInside)
+        floatingButtonView.userSettingButton.addTarget(self, action: #selector(toUserSettingView), for: .touchUpInside)
+        floatingButtonView.othersButton.addTarget(self, action: #selector(toOthersView), for: .touchUpInside)
     }
     
-    private func initLayout() {
-        view.addSubview(floatingButtonView)
-        
-        floatingButtonView.snp.makeConstraints { make in
-            make.right.bottom.equalToSuperview().inset(20)
-        }
+    @objc private func toHistoryView() {
+        let vc = HistoryMonthListViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func toUserSettingView() {
+        let vc = UserSettingViewController()
+        present(vc, animated: true, completion: nil)
+    }
+    
+    @objc private func toOthersView() {
+        let vc = OthersViewController()
+        present(vc, animated: true, completion: nil)
     }
 }

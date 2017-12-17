@@ -9,106 +9,122 @@
 import UIKit
 import SnapKit
 
-extension MainViewController {
-    final class ActiveFloatingButtonView: UIView {
-        private enum State {
-            case opened, animating, closed
+final class ActiveFloatingButtonView: UIView {
+    private enum State {
+        case opened, animating, closed
+    }
+    
+    let historyButton = UIButton()
+    let userSettingButton = UIButton()
+    let othersButton = UIButton()
+    private let mainButton = UIButton()
+    private var buttonState: State = .closed
+    private let margin: CGFloat = 5
+    private var distance: CGFloat { return historyButton.frame.height + margin }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initLayout()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        
+        initLayout()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        
+        historyButton.round()
+        userSettingButton.round()
+        othersButton.round()
+        mainButton.round()
+        
+        historyButton.transform = affineTransform(y: distance * 3)
+        userSettingButton.transform = affineTransform(y: distance * 2)
+        othersButton.transform = affineTransform(y: distance * distance)
+    }
+    
+    private func initLayout() {
+        addSubviews(historyButton, userSettingButton, othersButton, mainButton)
+        
+        historyButton.setTitle("H", for: .normal)
+        userSettingButton.setTitle("S", for: .normal)
+        othersButton.setTitle("O", for: .normal)
+        historyButton.backgroundColor = UIColor.primary
+        userSettingButton.backgroundColor = UIColor.primary
+        othersButton.backgroundColor = UIColor.primary
+        mainButton.backgroundColor = UIColor.primary
+        mainButton.addTarget(self, action: #selector(openOrClose), for: .touchUpInside)
+        
+        historyButton.snp.makeConstraints { make in
+            make.top.centerX.equalToSuperview()
+            make.width.height.equalTo(45)
         }
-        
-        let historyButton = UIButton()
-        let userSettingButton = UIButton()
-        let othersButton = UIButton()
-        private let mainButton = UIButton()
-        private var buttonState: State = .closed
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            
-            initLayout()
+        userSettingButton.snp.makeConstraints { make in
+            make.top.equalTo(historyButton.snp.bottom).offset(margin)
+            make.centerX.equalToSuperview()
+            make.width.height.equalTo(45)
         }
-        
-        override func layoutSubviews() {
-            super.layoutSubviews()
-            
-            historyButton.round()
-            userSettingButton.round()
-            othersButton.round()
-            mainButton.round()
+        othersButton.snp.makeConstraints { make in
+            make.top.equalTo(userSettingButton.snp.bottom).offset(margin)
+            make.centerX.equalToSuperview()
+            make.width.height.equalTo(45)
         }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
+        mainButton.snp.makeConstraints { make in
+            make.top.equalTo(othersButton.snp.bottom).offset(margin)
+            make.left.right.bottom.equalToSuperview()
+            make.width.height.equalTo(55)
         }
+    }
+    
+    private func affineTransform(y: CGFloat) -> CGAffineTransform {
+        return CGAffineTransform(translationX: 0, y: y)
+    }
+    
+    @objc private func openOrClose() {
         
-        private func initLayout() {
-            addSubviews(historyButton, userSettingButton, othersButton, mainButton)
-            
-            historyButton.backgroundColor = UIColor.primary
-            userSettingButton.backgroundColor = UIColor.primary
-            othersButton.backgroundColor = UIColor.primary
-            mainButton.backgroundColor = UIColor.primary
-            mainButton.addTarget(self, action: #selector(openOrClose), for: .touchUpInside)
-            
-            historyButton.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-                make.width.height.equalTo(45)
-            }
-            userSettingButton.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-                make.width.height.equalTo(45)
-            }
-            othersButton.snp.makeConstraints { make in
-                make.center.equalToSuperview()
-                make.width.height.equalTo(45)
-            }
-            mainButton.snp.makeConstraints { make in
-                make.edges.equalToSuperview()
-                make.width.height.equalTo(55)
-            }
-        }
-        
-        @objc private func openOrClose() {
-            let distance = frame.height
-            
-            switch buttonState {
-            case .closed:
-                buttonState = .animating
+        switch buttonState {
+        case .closed:
+            buttonState = .animating
+            UIView.animate(withDuration: 0.1, animations: {
+                self.othersButton.transform = self.affineTransform(y: 0)
+                self.userSettingButton.transform = self.affineTransform(y: self.distance)
+                self.historyButton.transform = self.affineTransform(y: self.distance * 2)
+            }, completion: { _ in
                 UIView.animate(withDuration: 0.1, animations: {
-                    self.othersButton.transform = CGAffineTransform(translationX: 0, y: -distance)
-                    self.userSettingButton.transform = CGAffineTransform(translationX: 0, y: -distance)
-                    self.historyButton.transform = CGAffineTransform(translationX: 0, y: -distance)
+                    self.userSettingButton.transform = self.affineTransform(y: 0)
+                    self.historyButton.transform = self.affineTransform(y: self.distance)
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.1, animations: {
-                        self.userSettingButton.transform = CGAffineTransform(translationX: 0, y: -distance * 2)
-                        self.historyButton.transform = CGAffineTransform(translationX: 0, y: -distance * 2)
-                    }, completion: { _ in
-                        UIView.animate(withDuration: 0.1, animations: {
-                            self.historyButton.transform = CGAffineTransform(translationX: 0, y: -distance * 3)
-                            self.buttonState = .opened
-                        })
+                        self.historyButton.transform = self.affineTransform(y: 0)
+                        self.buttonState = .opened
                     })
                 })
-            case .animating:
-                // 連打防止
-                break
-            case .opened:
-                buttonState = .animating
+            })
+        case .animating:
+            // 連打防止
+            break
+        case .opened:
+            buttonState = .animating
+            UIView.animate(withDuration: 0.1, animations: {
+                self.historyButton.transform = self.affineTransform(y: self.distance)
+            }, completion: { _ in
                 UIView.animate(withDuration: 0.1, animations: {
-                    self.historyButton.transform = CGAffineTransform(translationX: 0, y: -distance * 2)
+                    self.userSettingButton.transform = self.affineTransform(y: self.distance)
+                    self.historyButton.transform = CGAffineTransform(translationX: 0, y: self.distance * 2)
                 }, completion: { _ in
                     UIView.animate(withDuration: 0.1, animations: {
-                        self.userSettingButton.transform = CGAffineTransform(translationX: 0, y: -distance)
-                        self.historyButton.transform = CGAffineTransform(translationX: 0, y: -distance)
-                    }, completion: { _ in
-                        UIView.animate(withDuration: 0.1, animations: {
-                            self.othersButton.transform = CGAffineTransform(translationX: 0, y: 0)
-                            self.userSettingButton.transform = CGAffineTransform(translationX: 0, y: 0)
-                            self.historyButton.transform = CGAffineTransform(translationX: 0, y: 0)
-                            self.buttonState = .closed
-                        })
+                        self.othersButton.transform = self.affineTransform(y: self.distance)
+                        self.userSettingButton.transform = self.affineTransform(y: self.distance * 2)
+                        self.historyButton.transform = self.affineTransform(y: self.distance * 3)
+                        self.buttonState = .closed
                     })
                 })
-            }
+            })
         }
     }
 }
+

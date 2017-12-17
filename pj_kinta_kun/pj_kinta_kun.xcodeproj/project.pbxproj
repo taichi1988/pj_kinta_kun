@@ -20,6 +20,10 @@
 		95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */; };
 		95F0BF291FE6B2BD00303909 /* ActiveFloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF281FE6B2BD00303909 /* ActiveFloatingButton.swift */; };
 		95F0BF2B1FE6B50700303909 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */; };
+		95F0BF311FE6D5E800303909 /* HistoryMonthListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF301FE6D5E800303909 /* HistoryMonthListViewController.swift */; };
+		95F0BF331FE6D61100303909 /* HistoryDayListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF321FE6D61100303909 /* HistoryDayListViewController.swift */; };
+		95F0BF351FE6D62A00303909 /* OthersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF341FE6D62A00303909 /* OthersViewController.swift */; };
+		95F0BF381FE6D68D00303909 /* UserSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF371FE6D68D00303909 /* UserSettingViewController.swift */; };
 		EBFE377B4E28AB2146DE55BC /* Pods_pj_kinta_kun.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 79052732F905096524C96B25 /* Pods_pj_kinta_kun.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +59,10 @@
 		95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		95F0BF281FE6B2BD00303909 /* ActiveFloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveFloatingButton.swift; sourceTree = "<group>"; };
 		95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		95F0BF301FE6D5E800303909 /* HistoryMonthListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMonthListViewController.swift; sourceTree = "<group>"; };
+		95F0BF321FE6D61100303909 /* HistoryDayListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDayListViewController.swift; sourceTree = "<group>"; };
+		95F0BF341FE6D62A00303909 /* OthersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OthersViewController.swift; sourceTree = "<group>"; };
+		95F0BF371FE6D68D00303909 /* UserSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingViewController.swift; sourceTree = "<group>"; };
 		A3E5699A1F1F502942D165B2 /* Pods-pj_kinta_kun.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-pj_kinta_kun.release.xcconfig"; path = "Pods/Target Support Files/Pods-pj_kinta_kun/Pods-pj_kinta_kun.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +146,7 @@
 				95AF53341FE65A11000422A1 /* Main */,
 				95AF532F1FE65A11000422A1 /* HistoryMonthList */,
 				95AF53321FE65A11000422A1 /* HistoryDayList */,
+				95F0BF361FE6D68300303909 /* UserSetting */,
 				95AF53301FE65A11000422A1 /* Others */,
 			);
 			path = View;
@@ -146,6 +155,7 @@
 		95AF532F1FE65A11000422A1 /* HistoryMonthList */ = {
 			isa = PBXGroup;
 			children = (
+				95F0BF301FE6D5E800303909 /* HistoryMonthListViewController.swift */,
 			);
 			path = HistoryMonthList;
 			sourceTree = "<group>";
@@ -153,6 +163,7 @@
 		95AF53301FE65A11000422A1 /* Others */ = {
 			isa = PBXGroup;
 			children = (
+				95F0BF341FE6D62A00303909 /* OthersViewController.swift */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -167,6 +178,7 @@
 		95AF53321FE65A11000422A1 /* HistoryDayList */ = {
 			isa = PBXGroup;
 			children = (
+				95F0BF321FE6D61100303909 /* HistoryDayListViewController.swift */,
 			);
 			path = HistoryDayList;
 			sourceTree = "<group>";
@@ -197,6 +209,14 @@
 				95F0BF2A1FE6B50700303909 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		95F0BF361FE6D68300303909 /* UserSetting */ = {
+			isa = PBXGroup;
+			children = (
+				95F0BF371FE6D68D00303909 /* UserSettingViewController.swift */,
+			);
+			path = UserSetting;
 			sourceTree = "<group>";
 		};
 		E9A4C8FCA57F39558485FDE1 /* Pods */ = {
@@ -439,9 +459,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95F0BF331FE6D61100303909 /* HistoryDayListViewController.swift in Sources */,
 				95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */,
 				95F0BF2B1FE6B50700303909 /* UIColorExtension.swift in Sources */,
+				95F0BF311FE6D5E800303909 /* HistoryMonthListViewController.swift in Sources */,
+				95F0BF381FE6D68D00303909 /* UserSettingViewController.swift in Sources */,
 				95AF533E1FE65B14000422A1 /* SplashViewController.swift in Sources */,
+				95F0BF351FE6D62A00303909 /* OthersViewController.swift in Sources */,
 				95AF530F1FE6522B000422A1 /* AppDelegate.swift in Sources */,
 				95AF53411FE65E43000422A1 /* R.generated.swift in Sources */,
 				95F0BF221FE6A8AB00303909 /* MainViewController.swift in Sources */,
