@@ -22,7 +22,29 @@ final class MainViewController: UIViewController {
     }
     
     private func initLayout() {
-        view.addSubviews(floatingButtonView)
+        let titleLabel = UILabel()
+        titleLabel.text = "KINTA"
+        titleLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+        titleLabel.textColor = UIColor.primary
+        let borderLine = UIView()
+        borderLine.backgroundColor = UIColor.primary
+        
+        view.addSubviews(titleLabel, borderLine, floatingButtonView)
+        
+        titleLabel.snp.makeConstraints { make in
+            if #available(iOS 11, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(22)
+            } else {
+                make.top.equalToSuperview().inset(22)
+            }
+            make.left.equalToSuperview().inset(22)
+        }
+        borderLine.snp.makeConstraints { make in
+            make.top.equalTo(titleLabel.snp.firstBaseline).offset(3)
+            make.left.equalTo(titleLabel)
+            make.right.equalToSuperview()
+            make.height.equalTo(1)
+        }
         floatingButtonView.snp.makeConstraints { make in
             make.right.equalToSuperview().inset(20)
             if #available(iOS 11, *) {
