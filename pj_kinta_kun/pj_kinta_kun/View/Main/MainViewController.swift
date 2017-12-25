@@ -9,14 +9,28 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-    @IBOutlet weak var floatingButtonView: ActiveFloatingButtonView!
+    private let floatingButtonView = ActiveFloatingButtonView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        initLayout()
+        
         floatingButtonView.historyButton.addTarget(self, action: #selector(toHistoryView), for: .touchUpInside)
         floatingButtonView.userSettingButton.addTarget(self, action: #selector(toUserSettingView), for: .touchUpInside)
         floatingButtonView.othersButton.addTarget(self, action: #selector(toOthersView), for: .touchUpInside)
+    }
+    
+    private func initLayout() {
+        view.addSubviews(floatingButtonView)
+        floatingButtonView.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(20)
+            if #available(iOS 11, *) {
+                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
+            } else {
+                make.bottom.equalToSuperview().inset(20)
+            }
+        }
     }
     
     @objc private func toHistoryView() {

@@ -17,26 +17,9 @@
                     <view key="view" contentMode="scaleToFill" id="no7-0H-4iJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgg-IW-Ac5" customClass="ActiveFloatingButtonView" customModule="pj_kinta_kun" customModuleProvider="target">
-                                <rect key="frame" x="300" y="592" width="55" height="55"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" placeholder="YES" id="Y42-Bf-ekO"/>
-                                    <constraint firstAttribute="width" constant="55" placeholder="YES" id="jhl-4E-apg"/>
-                                </constraints>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="28s-49-fGy" firstAttribute="bottom" secondItem="bgg-IW-Ac5" secondAttribute="bottom" constant="20" id="CeQ-2e-B1l"/>
-                            <constraint firstItem="28s-49-fGy" firstAttribute="trailing" secondItem="bgg-IW-Ac5" secondAttribute="trailing" constant="20" id="J0a-by-wqA"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="28s-49-fGy"/>
                     </view>
-                    <connections>
-                        <outlet property="floatingButtonView" destination="bgg-IW-Ac5" id="OR8-kC-CdM"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jmu-VF-BEI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

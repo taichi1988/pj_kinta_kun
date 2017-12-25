@@ -29,9 +29,7 @@ final class ActiveFloatingButtonView: UIView {
     }
     
     required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
-        initLayout()
+        fatalError("init(coder:) has not been implemented")
     }
     
     override func layoutSubviews() {
@@ -51,11 +49,16 @@ final class ActiveFloatingButtonView: UIView {
         addSubviews(historyButton, userSettingButton, othersButton, mainButton)
         
         historyButton.setTitle("H", for: .normal)
-        userSettingButton.setTitle("S", for: .normal)
-        othersButton.setTitle("O", for: .normal)
+        historyButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         historyButton.backgroundColor = UIColor.primary
+        userSettingButton.setTitle("S", for: .normal)
+        userSettingButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         userSettingButton.backgroundColor = UIColor.primary
+        othersButton.setTitle("O", for: .normal)
+        othersButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .bold)
         othersButton.backgroundColor = UIColor.primary
+        mainButton.setTitle("＋", for: .normal)
+        mainButton.titleLabel?.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         mainButton.backgroundColor = UIColor.primary
         mainButton.addTarget(self, action: #selector(openOrClose), for: .touchUpInside)
         
@@ -89,16 +92,19 @@ final class ActiveFloatingButtonView: UIView {
         switch buttonState {
         case .closed:
             buttonState = .animating
-            UIView.animate(withDuration: 0.1, animations: {
+            UIView.animate(withDuration: 0.15) {
+                self.mainButton.transform = CGAffineTransform(rotationAngle: 45 * .pi / 180)
+            }
+            UIView.animate(withDuration: 0.05, animations: {
                 self.othersButton.transform = self.affineTransform(y: 0)
                 self.userSettingButton.transform = self.affineTransform(y: self.distance)
                 self.historyButton.transform = self.affineTransform(y: self.distance * 2)
             }, completion: { _ in
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.05, animations: {
                     self.userSettingButton.transform = self.affineTransform(y: 0)
                     self.historyButton.transform = self.affineTransform(y: self.distance)
                 }, completion: { _ in
-                    UIView.animate(withDuration: 0.1, animations: {
+                    UIView.animate(withDuration: 0.05, animations: {
                         self.historyButton.transform = self.affineTransform(y: 0)
                         self.buttonState = .opened
                     })
@@ -109,14 +115,17 @@ final class ActiveFloatingButtonView: UIView {
             break
         case .opened:
             buttonState = .animating
-            UIView.animate(withDuration: 0.1, animations: {
+            UIView.animate(withDuration: 0.15) {
+                self.mainButton.transform = CGAffineTransform(rotationAngle: 0)
+            }
+            UIView.animate(withDuration: 0.05, animations: {
                 self.historyButton.transform = self.affineTransform(y: self.distance)
             }, completion: { _ in
-                UIView.animate(withDuration: 0.1, animations: {
+                UIView.animate(withDuration: 0.05, animations: {
                     self.userSettingButton.transform = self.affineTransform(y: self.distance)
                     self.historyButton.transform = CGAffineTransform(translationX: 0, y: self.distance * 2)
                 }, completion: { _ in
-                    UIView.animate(withDuration: 0.1, animations: {
+                    UIView.animate(withDuration: 0.05, animations: {
                         self.othersButton.transform = self.affineTransform(y: self.distance)
                         self.userSettingButton.transform = self.affineTransform(y: self.distance * 2)
                         self.historyButton.transform = self.affineTransform(y: self.distance * 3)
