@@ -9,16 +9,14 @@
 import UIKit
 
 final class MainViewController: UIViewController {
+    private let buttonAreaView = ButtonAreaView()
     private let floatingButtonView = ActiveFloatingButtonView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initLayout()
-        
-        floatingButtonView.historyButton.addTarget(self, action: #selector(toHistoryView), for: .touchUpInside)
-        floatingButtonView.userSettingButton.addTarget(self, action: #selector(toUserSettingView), for: .touchUpInside)
-        floatingButtonView.othersButton.addTarget(self, action: #selector(toOthersView), for: .touchUpInside)
+        initButtonAction()
     }
     
     private func initLayout() {
@@ -29,7 +27,7 @@ final class MainViewController: UIViewController {
         let borderLine = UIView()
         borderLine.backgroundColor = UIColor.primary
         
-        view.addSubviews(titleLabel, borderLine, floatingButtonView)
+        view.addSubviews(titleLabel, borderLine, buttonAreaView, floatingButtonView)
         
         titleLabel.snp.makeConstraints { make in
             if #available(iOS 11, *) {
@@ -45,14 +43,28 @@ final class MainViewController: UIViewController {
             make.right.equalToSuperview()
             make.height.equalTo(1)
         }
-        floatingButtonView.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(20)
+        buttonAreaView.snp.makeConstraints { make in
+            make.left.equalToSuperview().inset(20)
+            make.right.equalTo(floatingButtonView.snp.left).offset(-20)
             if #available(iOS 11, *) {
                 make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(20)
             } else {
                 make.bottom.equalToSuperview().inset(20)
             }
         }
+        floatingButtonView.snp.makeConstraints { make in
+            make.right.equalToSuperview().inset(20)
+            make.bottom.equalTo(buttonAreaView)
+        }
+    }
+    
+    private func initButtonAction() {
+        buttonAreaView.startWorkButton.addTarget(self, action: #selector(startWorkButtonAction), for: .touchUpInside)
+        buttonAreaView.breakTimeButton.addTarget(self, action: #selector(breakTimeButtonAction), for: .touchUpInside)
+        buttonAreaView.endWorkButton.addTarget(self, action: #selector(endWorkButtonAction), for: .touchUpInside)
+        floatingButtonView.historyButton.addTarget(self, action: #selector(toHistoryView), for: .touchUpInside)
+        floatingButtonView.userSettingButton.addTarget(self, action: #selector(toUserSettingView), for: .touchUpInside)
+        floatingButtonView.othersButton.addTarget(self, action: #selector(toOthersView), for: .touchUpInside)
     }
     
     @objc private func toHistoryView() {
@@ -69,4 +81,8 @@ final class MainViewController: UIViewController {
         let vc = OthersViewController()
         present(vc, animated: true, completion: nil)
     }
+    
+    @objc private func startWorkButtonAction() {}
+    @objc private func breakTimeButtonAction() {}
+    @objc private func endWorkButtonAction() {}
 }

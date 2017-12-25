@@ -29,4 +29,6 @@ extension UIColor {
     }
     
     static var primary: UIColor { return UIColor(hex: "009193") }
+    static var primaryButtonShadow: UIColor { return UIColor(hex: "003132") }
+    static var primaryButtonSelected: UIColor { return UIColor(hex: "003132") }
 }

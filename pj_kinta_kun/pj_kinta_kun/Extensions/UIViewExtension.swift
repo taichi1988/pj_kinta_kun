@@ -14,6 +14,13 @@ extension UIView {
         layer.masksToBounds = true
     }
     
+    func setShadow() {
+        layer.shadowOffset.height = 2
+        layer.shadowRadius = 0
+        layer.shadowOpacity = 1
+        isExclusiveTouch = true
+    }
+    
     func round() {
         layer.cornerRadius = frame.height / 2
         layer.masksToBounds = true
