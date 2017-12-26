@@ -29,6 +29,8 @@ final class HistoryMonthListViewController: UIViewController {
     }
     
     private func initLayout() {
+        navigationController?.setNavigationBarHidden(true, animated: true)
+        
         view.addSubview(tableView)
         tableView.backgroundColor = .white
         tableView.rowHeight = 60
@@ -61,5 +63,8 @@ extension HistoryMonthListViewController: UITableViewDataSource {
 extension HistoryMonthListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        let vc = HistoryDayListViewController()
+        show(vc, sender: nil)
     }
 }

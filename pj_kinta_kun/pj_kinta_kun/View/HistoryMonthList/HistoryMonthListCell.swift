@@ -38,7 +38,7 @@ final class HistoryMonthListCell: UITableViewCell, CellReusable {
             make.bottom.equalToSuperview().inset(5)
         }
         yearLabel.snp.makeConstraints { make in
-            make.right.equalToSuperview().inset(30)
+            make.right.equalToSuperview().inset(20)
             make.bottom.equalTo(monthLabel)
         }
     }

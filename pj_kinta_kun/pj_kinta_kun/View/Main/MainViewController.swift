@@ -69,7 +69,8 @@ final class MainViewController: UIViewController {
     
     @objc private func toHistoryView() {
         let vc = HistoryMonthListViewController()
-        present(vc, animated: true, completion: nil)
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true, completion: nil)
     }
     
     @objc private func toUserSettingView() {

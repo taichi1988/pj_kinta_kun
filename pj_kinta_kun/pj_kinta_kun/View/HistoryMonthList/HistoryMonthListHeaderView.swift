@@ -25,7 +25,7 @@ final class HistoryMonthListHeaderView: UIView {
         
         let titleLabel = UILabel()
         titleLabel.text = "Month"
-        titleLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
         titleLabel.textColor = UIColor.primary
         let underLine = UIView()
         underLine.backgroundColor = UIColor.primary
@@ -34,13 +34,12 @@ final class HistoryMonthListHeaderView: UIView {
         
         titleLabel.snp.makeConstraints { make in
             make.top.left.equalToSuperview().inset(22)
-            make.bottom.equalToSuperview().inset(3)
-            make.height.equalTo(100)
+            make.bottom.equalToSuperview().inset(2)
         }
         underLine.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(3)
             make.left.equalTo(titleLabel)
             make.right.equalToSuperview()
+            make.bottom.equalToSuperview()
             make.height.equalTo(1)
         }
     }
