@@ -22,8 +22,8 @@ final class HistoryMonthListViewController: UIViewController {
     private func initLayout() {
         view.addSubviews(tableView)
         tableView.backgroundColor = .white
-        tableView.estimatedRowHeight = 44
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = 60
+        tableView.register(HistoryMonthListCell.self)
         
         tableView.snp.makeConstraintsEqualToSuperview()
     }
@@ -39,7 +39,8 @@ extension HistoryMonthListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(for: indexPath, as: HistoryMonthListCell.self)
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

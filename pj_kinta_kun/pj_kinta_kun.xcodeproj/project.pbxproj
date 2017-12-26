@@ -20,6 +20,7 @@
 		95E307F71FF1530400A24B5F /* ButtonAreaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307F61FF1530300A24B5F /* ButtonAreaView.swift */; };
 		95E307F91FF1673C00A24B5F /* HistoryMonthListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307F81FF1673C00A24B5F /* HistoryMonthListHeaderView.swift */; };
 		95E307FC1FF16A0000A24B5F /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307FB1FF16A0000A24B5F /* CellReusable.swift */; };
+		95E307FE1FF28D4E00A24B5F /* HistoryMonthListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307FD1FF28D4E00A24B5F /* HistoryMonthListCell.swift */; };
 		95F0BF221FE6A8AB00303909 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF211FE6A8AB00303909 /* MainViewController.swift */; };
 		95F0BF241FE6A8B200303909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F0BF231FE6A8B200303909 /* Main.storyboard */; };
 		95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */; };
@@ -64,6 +65,7 @@
 		95E307F61FF1530300A24B5F /* ButtonAreaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonAreaView.swift; sourceTree = "<group>"; };
 		95E307F81FF1673C00A24B5F /* HistoryMonthListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMonthListHeaderView.swift; sourceTree = "<group>"; };
 		95E307FB1FF16A0000A24B5F /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
+		95E307FD1FF28D4E00A24B5F /* HistoryMonthListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMonthListCell.swift; sourceTree = "<group>"; };
 		95F0BF211FE6A8AB00303909 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95F0BF231FE6A8B200303909 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 			children = (
 				95F0BF301FE6D5E800303909 /* HistoryMonthListViewController.swift */,
 				95E307F81FF1673C00A24B5F /* HistoryMonthListHeaderView.swift */,
+				95E307FD1FF28D4E00A24B5F /* HistoryMonthListCell.swift */,
 			);
 			path = HistoryMonthList;
 			sourceTree = "<group>";
@@ -508,6 +511,7 @@
 				95F0BF381FE6D68D00303909 /* UserSettingViewController.swift in Sources */,
 				95AF533E1FE65B14000422A1 /* SplashViewController.swift in Sources */,
 				95F0BF351FE6D62A00303909 /* OthersViewController.swift in Sources */,
+				95E307FE1FF28D4E00A24B5F /* HistoryMonthListCell.swift in Sources */,
 				95E307F31FF1473D00A24B5F /* ShadowButton.swift in Sources */,
 				95E307F51FF14B2900A24B5F /* UILayoutPriorityExtension.swift in Sources */,
 				95AF530F1FE6522B000422A1 /* AppDelegate.swift in Sources */,
