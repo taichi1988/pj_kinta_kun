@@ -19,8 +19,17 @@ final class HistoryMonthListViewController: UIViewController {
         tableView.delegate = self
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let statusBarBackView = UIView()
+        statusBarBackView.backgroundColor = .white
+        statusBarBackView.frame = UIApplication.shared.statusBarFrame
+        view.addSubview(statusBarBackView)
+    }
+    
     private func initLayout() {
-        view.addSubviews(tableView)
+        view.addSubview(tableView)
         tableView.backgroundColor = .white
         tableView.rowHeight = 60
         tableView.register(HistoryMonthListCell.self)
@@ -51,5 +60,6 @@ extension HistoryMonthListViewController: UITableViewDataSource {
 
 extension HistoryMonthListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
