@@ -19,9 +19,21 @@ final class HistoryDayListViewController: UIViewController {
         tableView.delegate = self
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        let statusBarBackView = UIView()
+        statusBarBackView.backgroundColor = .white
+        statusBarBackView.frame = UIApplication.shared.statusBarFrame
+        view.addSubview(statusBarBackView)
+    }
+    
     private func initLayout() {
         view.addSubviews(tableView)
         tableView.backgroundColor = .white
+        tableView.estimatedRowHeight = 44
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.register(HistoryDayListCell.self)
         tableView.snp.makeConstraintsEqualToSuperview()
     }
 }
@@ -36,7 +48,9 @@ extension HistoryDayListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(for: indexPath, as: HistoryDayListCell.self)
+        cell.set(startTime: "10:00", breakTime: "1h", endTime: "19:00")
+        return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {

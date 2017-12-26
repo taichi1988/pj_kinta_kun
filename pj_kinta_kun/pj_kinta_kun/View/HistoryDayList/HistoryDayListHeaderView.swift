@@ -22,6 +22,8 @@ class HistoryDayListHeaderView: UIView {
     }
     
     private func initLayout() {
+        backgroundColor = .white
+        
         monthLabel.text = "October"
         monthLabel.textColor = .primary
         monthLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)

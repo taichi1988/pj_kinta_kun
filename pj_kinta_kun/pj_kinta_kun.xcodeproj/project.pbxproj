@@ -22,6 +22,7 @@
 		95E307FC1FF16A0000A24B5F /* CellReusable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307FB1FF16A0000A24B5F /* CellReusable.swift */; };
 		95E307FE1FF28D4E00A24B5F /* HistoryMonthListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307FD1FF28D4E00A24B5F /* HistoryMonthListCell.swift */; };
 		95E308001FF29CF300A24B5F /* HistoryDayListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E307FF1FF29CF300A24B5F /* HistoryDayListHeaderView.swift */; };
+		95E308021FF2A1B500A24B5F /* HistoryDayListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E308011FF2A1B500A24B5F /* HistoryDayListCell.swift */; };
 		95F0BF221FE6A8AB00303909 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF211FE6A8AB00303909 /* MainViewController.swift */; };
 		95F0BF241FE6A8B200303909 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95F0BF231FE6A8B200303909 /* Main.storyboard */; };
 		95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */; };
@@ -68,6 +69,7 @@
 		95E307FB1FF16A0000A24B5F /* CellReusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellReusable.swift; sourceTree = "<group>"; };
 		95E307FD1FF28D4E00A24B5F /* HistoryMonthListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryMonthListCell.swift; sourceTree = "<group>"; };
 		95E307FF1FF29CF300A24B5F /* HistoryDayListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDayListHeaderView.swift; sourceTree = "<group>"; };
+		95E308011FF2A1B500A24B5F /* HistoryDayListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDayListCell.swift; sourceTree = "<group>"; };
 		95F0BF211FE6A8AB00303909 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		95F0BF231FE6A8B200303909 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		95F0BF261FE6AD8B00303909 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			children = (
 				95F0BF321FE6D61100303909 /* HistoryDayListViewController.swift */,
 				95E307FF1FF29CF300A24B5F /* HistoryDayListHeaderView.swift */,
+				95E308011FF2A1B500A24B5F /* HistoryDayListCell.swift */,
 			);
 			path = HistoryDayList;
 			sourceTree = "<group>";
@@ -507,6 +510,7 @@
 				95E307FC1FF16A0000A24B5F /* CellReusable.swift in Sources */,
 				95F0BF331FE6D61100303909 /* HistoryDayListViewController.swift in Sources */,
 				95F0BF271FE6AD8B00303909 /* UIViewExtension.swift in Sources */,
+				95E308021FF2A1B500A24B5F /* HistoryDayListCell.swift in Sources */,
 				95F0BF2B1FE6B50700303909 /* UIColorExtension.swift in Sources */,
 				95E307F71FF1530400A24B5F /* ButtonAreaView.swift in Sources */,
 				95F0BF311FE6D5E800303909 /* HistoryMonthListViewController.swift in Sources */,
