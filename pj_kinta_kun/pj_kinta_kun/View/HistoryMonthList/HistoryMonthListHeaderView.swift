@@ -26,9 +26,9 @@ final class HistoryMonthListHeaderView: UIView {
         let titleLabel = UILabel()
         titleLabel.text = "Month"
         titleLabel.font = UIFont.systemFont(ofSize: 50, weight: .bold)
-        titleLabel.textColor = UIColor.primary
+        titleLabel.textColor = .primary
         let underLine = UIView()
-        underLine.backgroundColor = UIColor.primary
+        underLine.backgroundColor = .primary
         
         addSubviews(titleLabel, underLine)
         

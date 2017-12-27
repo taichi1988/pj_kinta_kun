@@ -63,7 +63,7 @@ final class HistoryDayListCell: UITableViewCell, CellReusable {
 
 private func makeLabel(text: String? = nil) -> UILabel {
     let label = UILabel()
-    label.text = text ?? ""
+    label.text = text
     label.textColor = .primary
     label.font = UIFont.systemFont(ofSize: 18, weight: .bold)
     return label

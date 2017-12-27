@@ -24,11 +24,11 @@ final class HistoryMonthListCell: UITableViewCell, CellReusable {
         
         let monthLabel = UILabel()
         monthLabel.text = "October"
-        monthLabel.textColor = UIColor.primary
+        monthLabel.textColor = .primary
         monthLabel.font = UIFont.systemFont(ofSize: 22, weight: .bold)
         let yearLabel = UILabel()
         yearLabel.text = "2017"
-        yearLabel.textColor = UIColor.primary
+        yearLabel.textColor = .primary
         yearLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         contentView.addSubviews(monthLabel, yearLabel)
