@@ -83,7 +83,12 @@ final class MainViewController: UIViewController {
         present(vc, animated: true, completion: nil)
     }
     
-    @objc private func startWorkButtonAction() {}
-    @objc private func breakTimeButtonAction() {}
+    @objc private func startWorkButtonAction() {
+        
+    }
+    
+    @objc private func breakTimeButtonAction() {
+        
+    }
     @objc private func endWorkButtonAction() {}
 }
