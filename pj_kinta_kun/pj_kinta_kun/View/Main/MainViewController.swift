@@ -84,11 +84,45 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func startWorkButtonAction() {
+//        var hour = Date().hour
+//        var minute = Date().minute
+//        // 切り上げ計算
+//        switch minute {
+//        case 0 ..< 30:
+//            minute = 30
+//        default:
+//            minute = 0
+//            hour += 1
+//        }
+//        buttonAreaView.startWorkTimeLabel.text = "\(hour):\(minute)"
         
+        let comps = DateComponents()
+        var hour = comps.hour
+        var minute = comps.minute
+        
+        print(hour, minute)
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        let date = formatter.string(from: Date())
+        
+        print(date)
     }
     
     @objc private func breakTimeButtonAction() {
         
     }
-    @objc private func endWorkButtonAction() {}
+    
+    @objc private func endWorkButtonAction() {
+        let hour = Date().hour
+        var minute = Date().minute
+        // 切り捨て計算
+        switch minute {
+        case 0 ..< 30:
+            minute = 0
+        default:
+            minute = 30
+        }
+        buttonAreaView.endWorkTimeLabel.text = "\(hour):\(minute)"
+    }
 }

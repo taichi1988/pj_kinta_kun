@@ -29,6 +29,12 @@ final class ButtonAreaView: UIView {
     
     private func initLayout() {
         addUnderLine(to: startWorkTimeLabel, breakTimeLabel, endWorkTimeLabel)
+        startWorkTimeLabel.textColor = .primary
+        startWorkTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        breakTimeLabel.textColor = .primary
+        breakTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
+        endWorkTimeLabel.textColor = .primary
+        endWorkTimeLabel.font = UIFont.systemFont(ofSize: 18, weight: .bold)
         
         let startWorkStackView = UIStackView(arrangedSubviews: [startWorkButton, startWorkTimeLabel])
         startWorkStackView.spacing = 4

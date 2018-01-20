@@ -12,6 +12,7 @@ extension Date {
         return Calendar.current.component(component, from: self)
     }
     
+    // MARK: -
     var year: Int { return component(.year) }
     
     var month: Int { return component(.month) }
@@ -21,4 +22,11 @@ extension Date {
     var hour: Int { return component(.hour) }
     
     var minute: Int { return component(.minute) }
+    
+    // MARK: -
+    var hourAndMinute: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "HH:mm"
+        return formatter.string(from: self)
+    }
 }
