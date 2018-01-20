@@ -9,7 +9,7 @@
 import UIKit
 
 final class HistoryMonthListViewController: UIViewController {
-    private let backButton = UIButton()
+    private let dismissButton = UIButton()
     private let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -32,18 +32,18 @@ final class HistoryMonthListViewController: UIViewController {
     private func initLayout() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        view.addSubviews(tableView, backButton)
+        view.addSubviews(tableView, dismissButton)
         
         tableView.backgroundColor = .white
         tableView.rowHeight = 60
         tableView.register(HistoryMonthListCell.self)
         
-        backButton.setTitle("×", for: .normal)
-        backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
-        backButton.setTitleColor(.primary, for: .normal)
-        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+        dismissButton.setTitle("×", for: .normal)
+        dismissButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        dismissButton.setTitleColor(.primary, for: .normal)
+        dismissButton.addTarget(self, action: #selector(dismissButtonAction), for: .touchUpInside)
         
-        backButton.snp.makeConstraints { make in
+        dismissButton.snp.makeConstraints { make in
             if #available(iOS 11.0, *) {
                 make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
             } else {
@@ -55,7 +55,7 @@ final class HistoryMonthListViewController: UIViewController {
     }
     
     @objc
-    private func backButtonAction() {
+    private func dismissButtonAction() {
         dismiss(animated: true, completion: nil)
     }
 }
