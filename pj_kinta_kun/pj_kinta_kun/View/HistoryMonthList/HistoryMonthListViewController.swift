@@ -9,6 +9,7 @@
 import UIKit
 
 final class HistoryMonthListViewController: UIViewController {
+    private let backButton = UIButton()
     private let tableView = UITableView()
     
     override func viewDidLoad() {
@@ -31,12 +32,31 @@ final class HistoryMonthListViewController: UIViewController {
     private func initLayout() {
         navigationController?.setNavigationBarHidden(true, animated: true)
         
-        view.addSubview(tableView)
+        view.addSubviews(tableView, backButton)
+        
         tableView.backgroundColor = .white
         tableView.rowHeight = 60
         tableView.register(HistoryMonthListCell.self)
         
+        backButton.setTitle("×", for: .normal)
+        backButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 40)
+        backButton.setTitleColor(.primary, for: .normal)
+        backButton.addTarget(self, action: #selector(backButtonAction), for: .touchUpInside)
+        
+        backButton.snp.makeConstraints { make in
+            if #available(iOS 11.0, *) {
+                make.top.equalTo(view.safeAreaLayoutGuide.snp.top)
+            } else {
+                make.top.equalToSuperview().inset(20)
+            }
+            make.right.equalToSuperview().inset(20)
+        }
         tableView.snp.makeConstraintsEqualToSuperview()
+    }
+    
+    @objc
+    private func backButtonAction() {
+        dismiss(animated: true, completion: nil)
     }
 }
 
