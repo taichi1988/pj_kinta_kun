@@ -18,12 +18,15 @@ final class SplashViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            if let vc = R.storyboard.main.instantiateInitialViewController() {
-                vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true, completion: nil)
-            }
-        }
+
+        let vc = InitialSettingViewController()
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            if let vc = R.storyboard.main.instantiateInitialViewController() {
+//                vc.modalTransitionStyle = .crossDissolve
+//                self.present(vc, animated: true, completion: nil)
+//            }
+//        }
     }
 }
