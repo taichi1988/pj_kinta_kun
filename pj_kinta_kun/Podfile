@@ -6,6 +6,7 @@ target 'pj_kinta_kun' do
 
   pod 'SnapKit'
   pod 'R.swift'
+  pod 'Charts'
 
   target 'pj_kinta_kunTests' do
     inherit! :search_paths
