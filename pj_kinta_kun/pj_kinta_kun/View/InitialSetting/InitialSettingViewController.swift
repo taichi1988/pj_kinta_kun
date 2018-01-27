@@ -29,7 +29,7 @@ final class InitialSettingViewController: UIViewController {
         
         titleLabel.text = "Your Setting"
         titleLabel.textColor = .primary
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 50)
+        titleLabel.font = UIFont.boldSystemFont(ofSize: cgFloatResized(50))
         
         stackView.axis = .vertical
         stackView.spacing = 10
@@ -65,7 +65,7 @@ extension InitialSettingViewController {
             
             titleLabel.text = title
             titleLabel.textColor = .primary
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            titleLabel.font = UIFont.boldSystemFont(ofSize: cgFloatResized(18))
             textField.placeholder = placeholder
             textField.font = UIFont.systemFont(ofSize: 18)
             textField.textColor = .darkText
@@ -102,7 +102,7 @@ extension InitialSettingViewController {
             
             titleLabel.text = "Push notification"
             titleLabel.textColor = .primary
-            titleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            titleLabel.font = UIFont.boldSystemFont(ofSize: cgFloatResized(18))
             toggleSwitch.isOn = true
             toggleSwitch.onTintColor = .primary
             toggleSwitch.addTarget(self, action: #selector(switchAction), for: .valueChanged)
@@ -110,14 +110,14 @@ extension InitialSettingViewController {
             expandableView.addSubviews(noticeTimeTitleLabel, amTextField, pmTextField)
             noticeTimeTitleLabel.text = "Notification time"
             noticeTimeTitleLabel.textColor = .primary
-            noticeTimeTitleLabel.font = UIFont.boldSystemFont(ofSize: 18)
+            noticeTimeTitleLabel.font = UIFont.boldSystemFont(ofSize: cgFloatResized(18))
             amTextField.placeholder = "10:00"
-            amTextField.font = UIFont.systemFont(ofSize: 18)
+            amTextField.font = UIFont.systemFont(ofSize: cgFloatResized(18))
             amTextField.textColor = .darkText
             amTextField.backgroundColor = UIColor.primary.withAlphaComponent(0.2)
             amTextField.borderStyle = .roundedRect
             pmTextField.placeholder = "19:00"
-            pmTextField.font = UIFont.systemFont(ofSize: 18)
+            pmTextField.font = UIFont.systemFont(ofSize: cgFloatResized(18))
             pmTextField.textColor = .darkText
             pmTextField.backgroundColor = UIColor.primary.withAlphaComponent(0.2)
             pmTextField.borderStyle = .roundedRect
@@ -170,4 +170,10 @@ extension InitialSettingViewController {
             }
         }
     }
+}
+
+private func cgFloatResized(_ float: CGFloat) -> CGFloat {
+    let value: CGFloat = 375 //iPhone8
+    let rate = UIScreen.main.bounds.width / value
+    return float * rate
 }
