@@ -68,7 +68,14 @@ final class MainViewController: UIViewController {
     }
     
     @objc private func toHistoryView() {
-        let vc = HistoryMonthListViewController()
+//        let vc = HistoryMonthListViewController()
+//        let sb = UIStoryboard(name: "Tmp", bundle: nil)
+//        if let vc = sb.instantiateInitialViewController() {
+//            let nav = UINavigationController(rootViewController: vc)
+//            present(nav, animated: true, completion: nil)
+//        }
+        
+        let vc = TmpViewController()
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true, completion: nil)
     }
